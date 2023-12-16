@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Webpage</title>
+    <style>
+      .center {
+        opacity: 0;
+        animation: fade-in-out 5s ease-in-out infinite;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+
+      .center:first-child {
+        animation-delay: 0s;
+      }
+
+      .center:last-child {
+        animation-delay: 2.5s;
+      }
+
+      @keyframes fade-in-out {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">Declaration of Innocence and its relations with modern technologies</div>
+    <div class="center">For better experience, please turn on the background music, you will find in the navigation bar.</div>
+  </body>
+</html>
