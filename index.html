@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Assignment6</title>
+    <style>
+
+    .center {
+      opacity: 0;
+      animation: fade-in-out 5s ease-in-out infinite;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 30px;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    @keyframes fade-in-out {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    .page {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+      position: relative;
+    }
+
+    .page.active {
+      opacity: 1;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(255, 215, 0, 0.3);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      margin: 0 10px;
+    }
+
+    nav a {
+      color: brown;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 10px;
+      transition: background-color 0.5s ease-in-out;
+    }
+
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.5);
+      color: black;
+    }
+
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .popup.active {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">For better experience, please turn on the background music, you will find in the navigation bar.</div>
+
+    <audio id="myAudio">
+      <source src="ancient-181070.mp3" type="audio/mpeg">
+      <source src="ancient-181070.ogg" type="audio/ogg">
+    </audio>
+
+    <nav>
+		<ul>
+      <li><a href="#home">Home</a></li>
+			<li><a href="#intro">Intro</a></li>
+			<li><a href="#page1">D-1</a></li>
+      <li><a href="#page2">D-2</a></li>
+      <li><a href="#page3">D-3</a></li>
+      <li><a href="#page4">D-4</a></li>
+      <li><a href="#page5">D-5</a></li>
+      <li><a href="#page6">D-6</a></li>
+      <li><a href="#page7">D-7</a></li>
+      <li><a href="https://drive.usercontent.google.com/download?id=1PiEsFtt75qVE9-cCxsVbwrsHEx0rp84-&export=download&authuser=0&confirm=t&uuid=4fa7cd8b-a078-4844-b48e-a58fbbf5ad73&at=APZUnTWth5NKcCXkI6b0iNMuUNyk:1702746439926" download>Infographic PDF</a></li>
+      <li><a href="#myAudio" onclick="playAudio()" style="color: navy;">Background-Music</a></li>
+		</ul>
+	</nav>
+  <img id="home" src="Untitled design.png" alt="My Image" style="width:100%; hight:100%;">
+  <img id="intro" src="p_1.png" alt="into" style="width:100%; hight:100%;">
+  <img id="page1" src="p_2.png" alt="1" style="width:100%; hight:100%;">
+
+  <div style="position: relative;">
+    <img id="page2" src="p_3.png" alt="2" style="width:100%; hight:100%;">
+    <button onclick="openModal3()" style="font-size: 25px; position: absolute; top: 0; right: 0;">See an example</button>
+  </div>
+
+
+  <div style="position: relative;">
+    <img id="page3" src="p_4.png" alt="3" style="width:100%; hight:100%;">
+    <button onclick="openModal4()" style="font-size: 25px; position: absolute; top: 0; right: 0;">See an example</button>
+  </div>
+
+  <div style="position: relative;">
+    <img id="page4" src="p_5.png" alt="4" style="width:100%; hight:100%;">
+    <button onclick="openModal5()" style="font-size: 25px; position: absolute; top: 0; right: 0;">See an example</button>
+  </div>
+
+  <img id="page5" src="p_6.png" alt="5" style="width:100%; hight:100%;">
+  <img id="page6" src="p_7.png" alt="6" style="width:100%; hight:100%;">
+  <img id="page7" src="p_8.png" alt="7" style="width:100%; hight:100%;">
+  <script>
+  var x = document.getElementById("myAudio");
+
+  function playAudio() {
+    x.play();
+  }
+</script>
+
+    <script>
+    function openModal3() {
+      document.getElementById("myPopup3").classList.add("active");
+    }
+
+    function closeModal3() {
+      document.getElementById("myPopup3").classList.remove("active");
+    }
+
+      function openModal4() {
+        document.getElementById("myPopup4").classList.add("active");
+      }
+
+      function closeModal4() {
+        document.getElementById("myPopup4").classList.remove("active");
+      }
+
+      function openModal5() {
+        document.getElementById("myPopup5").classList.add("active");
+      }
+
+      function closeModal5() {
+        document.getElementById("myPopup5").classList.remove("active");
+      }
+    </script>
+
+    <!-- Explaination for each point -->
+    <div class="popup" id="myPopup3">
+        <p>A social media platform has been under fire for allowing harmful content to be shared on its site. The platform’s algorithm has been promoting posts that contain hate speech and misinformation, which has led to an increase in online harassment and bullying. Many users have reported feeling distressed and unsafe on the platform, and some have even experienced mental health issues as a result.
+          In response to these concerns, the platform decides to prioritize the well-being of its users and take action to prevent harm. It updates its algorithm to promote positive and informative content, and it implements stricter policies to remove harmful content from the site. The platform also provides resources and support for users who have been affected by online harassment and bullying.
+          Similarly, ransomware attacks can cause harm and stress to the targeted individuals. For example, a hospital may be targeted by a ransomware attack that encrypts patient data and demands payment in exchange for the decryption key. This can cause significant harm to the hospital’s patients, who may be unable to access their medical records or receive necessary treatment. By prioritizing the well-being of its users, the hospital can take steps to prevent ransomware attacks and protect patient data.</p>
+        <button onclick="closeModal3()">Close</button>
+    </div>
+
+    <div class="popup" id="myPopup4">
+        <p>John is a successful businessman who has been competing with his rival,
+           Tom, for years. One day, John discovers that Tom is planning to launch
+           a new product that will put John’s company out of business. In a
+           desperate attempt to stop Tom, John hires a hacker to create a deepfake
+            video that shows Tom admitting to committing a crime. John then
+            anonymously shares the video on social media, hoping that it will ruin
+             Tom’s reputation and prevent him from launching the new product.
+             Unfortunately, the video goes viral and Tom is falsely accused of
+             the crime. He is arrested and charged with a felony, and his
+             reputation is ruined. It takes months for Tom to clear his name and
+             prove that the video was fake, but by then, the damage has already
+             been done.</p>
+        <button onclick="closeModal4()">Close</button>
+    </div>
+
+    <div class="popup" id="myPopup5">
+        <p>a cybercriminal could use social engineering to deceive a person into
+           revealing their credit card information. The cybercriminal could impersonate
+            a bank representative and call the person, claiming that there has
+            been suspicious activity on their account. The cybercriminal could then
+            ask the person to verify their credit card information, including the
+            card number, expiration date, and security code. The cybercriminal could
+            then use this information to make unauthorized purchases or sell the
+            information on the dark web</p>
+        <button onclick="closeModal5()">Close</button>
+    </div>
+
+    <footer>
+      <center>
+        <p>©️ Ahmed Zaki Elbeltagy. All rights reserved.</p>
+      </center>
+    </footer>
+
+
+</body>
+</html>
